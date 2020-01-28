@@ -1,4 +1,0 @@
-{
-    "script": "document.getElementById(\"dateOfIncident\").setAttribute(\"value\",\"10/10/1990\")",
-    "args": []
-}

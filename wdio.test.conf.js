@@ -8,7 +8,7 @@ const { config } = require('./wdio.conf');
  *
  */
 
-config.baseUrl = 'http://assurantasms.vendev01.venturesolutions.com/t-mobile?usestaticresponse=28b37801-10a1-451d-ae80-e355cdec3027';
+config.baseUrl = 'https://qa.mywirelessclaim.com/t-mobile';
 
 /**
  * path/to/.feature

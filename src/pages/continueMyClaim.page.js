@@ -65,8 +65,8 @@ class ContinueClaim extends Page {
 
   constructor() {
     super();
-    this.href = '';
-    // this.href = '/t-mobile';
+    // this.href = '';
+    this.href = '/t-mobile';
     // /assurant/index.aspx
   }
 

@@ -83,15 +83,18 @@ exports.config = {
     snippets: false
   },
   reporters: [
-    'spec', 'allure'
-    // 'junit', 'dot', 'allure'
+    'spec', 'allure', 'junit'
+    // 'dot', 'allure'
   ],
   reporterOptions: {
     junit: {
       outputDir: './results/junit'
     },
     allure: {
-      outputDir: 'allure-results'
+      outputDir: 'allure-results',
+      disableWebdriverStepsReporting: true,
+      disableWebdriverScreenshotsReporting: true
+      // useCucumberStepReporter: true
     }
   },
 

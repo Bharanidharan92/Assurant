@@ -126,8 +126,8 @@ class FileClaim extends Page {
     this.authorizedContact.selectByVisibleText(this.user.authorizedContact);
     browser.pause(4000);
     browser.execute('document.getElementById("dateOfBirth").setAttribute("value","10/10/1990")');
-    // this.customerAuthentication.waitForVisible();
-    // this.customerAuthentication.setValue(this.user.customerAuthentication);
+    this.customerAuthentication.waitForVisible();
+    this.customerAuthentication.setValue(this.user.customerAuthentication);
     this.nextBtnFirst.waitForVisible();
     this.nextBtnFirst.click();
     browser.pause(3000);
