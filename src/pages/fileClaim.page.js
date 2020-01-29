@@ -5,6 +5,7 @@ class FileClaim extends Page {
   get mobileNumber() { return $('#customerIdentifier'); }
   get captcha() { return $('#recaptcha-anchor'); }
   get submitBtn1() { return $('#claimsSubmit1'); }
+  get fileMyClaimBtn() { return $('#btnFileClaim'); }
   get dateOfIncident() { return $('#dateOfIncident'); }
   get submitBtn2() { return $('#claimsSubmit2'); }
   get wirelessDeviceYesBtn() { return $('#idCodeAnswer_1Y'); }
@@ -93,6 +94,9 @@ class FileClaim extends Page {
     this.submitBtn1.waitForVisible();
     this.submitBtn1.click();
     browser.pause(5000);
+    this.fileMyClaimBtn.waitForVisible();
+    this.fileMyClaimBtn.click();
+    browser.pause(3000);
     browser.execute('document.getElementById("dateOfIncident").setAttribute("value","01/01/2020")');
     // this.emailAddress.waitForVisible();
     // this.emailAddress.setValue(this.user.email);

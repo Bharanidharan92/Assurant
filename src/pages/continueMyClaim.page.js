@@ -5,6 +5,7 @@ class ContinueClaim extends Page {
   get mobileNumber() { return $('#customerIdentifier'); }
   get captcha() { return $('#recaptcha-anchor'); }
   get submitBtn1() { return $('#claimsSubmit1'); }
+  get fileMyClaimBtn() { return $('#btnFileClaim'); }
   get continueMyExistClaimBtn() { return $('#btnIVREditClaim'); }
   get zipPostalCode() { return $('#billingZipCode'); }
   get dateOfIncident() { return $('#dateOfIncident'); }
@@ -93,16 +94,18 @@ class ContinueClaim extends Page {
     this.submitBtn1.waitForVisible();
     this.submitBtn1.click();
     browser.pause(5000);
-    // // this.continueMyExistClaimBtn.waitForVisible();
-    // // this.continueMyExistClaimBtn.click();
+    // this.fileMyClaimBtn.waitForVisible();
+    // this.fileMyClaimBtn.click();
     // browser.pause(3000);
-    this.zipPostalCode.waitForVisible();
-    this.zipPostalCode.setValue(this.user.zipCode);
+    this.emailAddress.waitForVisible();
+    this.emailAddress.setValue(this.user.emailAddress);
+    // this.zipPostalCode.waitForVisible();
+    // this.zipPostalCode.setValue(this.user.zipCode);
     this.submitBtn2.click();
     browser.pause(3000);
-    // this.noThanksContLink.waitForVisible();
-    // this.noThanksContLink.click();
-    // browser.pause(3000);
+    this.noThanksContLink.waitForVisible();
+    this.noThanksContLink.click();
+    browser.pause(3000);
   }
 
   FillContactInfo() {
@@ -110,28 +113,23 @@ class ContinueClaim extends Page {
     const { browserName } = browser.desiredCapabilities;
     super.user = users[browserName];
     browser.pause(3000);
-    this.customerAuthentication.waitForVisible();
-    this.customerAuthentication.setValue(this.user.customerAuthentication);
-    browser.pause(5000);
-    this.nextBtnFirst.click();
-    browser.pause(5000);
     this.firstName.waitForVisible();
     this.firstName.setValue(this.user.firstName);
     this.lastName.setValue(this.user.lastName);
     this.emailAddress.setValue(this.user.emailAddress);
     this.confEmailAddress.setValue(this.user.confEmailAddress);
-    // this.nameListedAcc.setValue(this.user.nameListedAcc);
-    // this.billingAddress.setValue(this.user.billingAddress);
-    // this.zipCode.setValue(this.user.zipCode);
-    browser.pause(3000);
-    // this.contactNumber.setValue(this.user.contactNumber);
-    // this.authorizedContact.selectByVisibleText(this.user.authorizedContact);
-    // browser.pause(4000);
+    this.nameListedAcc.setValue(this.user.nameListedAcc);
+    this.billingAddress.setValue(this.user.billingAddress);
+    this.zipCode.setValue(this.user.zipCode);
+    browser.pause(4000);
+    this.contactNumber.setValue(this.user.contactNumber);
+    this.authorizedContact.selectByVisibleText(this.user.authorizedContact);
+    browser.pause(4000);
     browser.execute('document.getElementById("dateOfBirth").setAttribute("value","10/10/1990")');
-    // this.customerAuthentication.waitForVisible();
-    // this.customerAuthentication.setValue(this.user.customerAuthentication);
-    this.nextBtnFirst.waitForVisible();
-    this.nextBtnFirst.click();
+    this.customerAuthentication.waitForVisible();
+    this.customerAuthentication.setValue(this.user.customerAuthentication);
+    this.exitAndContLaterLink.waitForVisible();
+    this.exitAndContLaterLink.click();
     browser.pause(7000);
     // this.yesBtn.waitForVisible();
     // this.yesBtn.click();

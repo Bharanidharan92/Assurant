@@ -1,7 +1,7 @@
 {
   "UserGroup": {
     "chrome": {
-      "mobile": "2018891768",
+      "mobile": "0987654321",
       "email": "test@gmail.com",
       "name": "QA Automation"
     }
@@ -10,14 +10,16 @@
   "TrackClaimUser": {
     "chrome": {
       "mobile": "6105004347",
-      "zipCode": "19087"
+      "zipCode": "19087",
+      "emailAddress":"test@nltechdev.com"
     }
   },
 
   "ContinueClaimUser": {
     "chrome": {
-      "mobile": "6105004311",
-      "zipCode": "19087"
+      "mobile": "2018891768",
+      "zipCode": "19087",
+      "emailAddress":"test@nltechdev.com"
     }
   },
 
